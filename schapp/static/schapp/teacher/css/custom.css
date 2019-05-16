@@ -1,0 +1,14 @@
+.panel-danger {
+    margin: 2px;
+    border: 1px solid darkred;
+}
+
+.nav-tabs {
+    font-weight: bold;
+}
+
+.img-thumbnail {
+    width: 40px;
+    height: 35px;
+}
+
