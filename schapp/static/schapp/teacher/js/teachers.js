@@ -44,4 +44,8 @@ $("#modal-student").on("submit", ".js-student-update-form", saveForm);
 /// Delete student
 $("#student-table").on("click", ".js-delete-student", loadForm);
 $("#modal-student").on("submit", ".js-student-delete-form", saveForm);
+
+// Create Grade
+$(".js-add-grade").click(loadForm);
+$("#modal-student").on("submit", ".js-grade-form", saveForm);
 });

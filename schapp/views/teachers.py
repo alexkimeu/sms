@@ -1,8 +1,16 @@
 from django.shortcuts import render, get_object_or_404
-from ..forms import StudentForm
-from ..models import Student
+from ..forms import StudentForm, GradeForm
+from ..models import Student, Subject
 from django.http import JsonResponse
 from django.template.loader import render_to_string
+from django.views.generic import ListView
+
+
+class StudentListView(ListView):
+    model = Student
+    template_name = 'schapp/teachers/index.html'
+    ordering = 'form'
+    context_object_name = 'students'
 
 
 def form1_students(request):
@@ -45,7 +53,7 @@ def save_student_form(request, form, template_name):
 # Partial to re-use
 def add_student(request):
     if request.method == 'POST':
-        form = StudentForm(request.POST or None, request.FILES or None)
+        form = StudentForm(request.POST)
     else:
         form = StudentForm()
     return save_student_form(request, form, 'schapp/teachers/includes/partial-student-add.html')
@@ -77,3 +85,58 @@ def delete_student(request, pk):
                                              request=request,
                                              )
     return JsonResponse(data)
+
+
+def save_grade_form(request, form, template_name, student):
+    data = dict()
+    if request.method == 'POST':
+        if form.is_valid():
+            grade = form.save(commit=False)
+            grade.student = student
+            grade.save()
+            data['form_is_valid'] = True
+            students = Student.objects.all()
+            data['html_student_list'] = render_to_string('schapp/teachers/includes/partial-student-list.html',
+                                                         {'students': students})
+        else:
+            data['form_is_valid'] = False
+    context = {'form': form, 'student': student}
+    data['html_form'] = render_to_string(template_name, context, request=request)
+    return JsonResponse(data)
+
+
+def add_grade(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    if request.method == 'POST':
+        form = GradeForm(request.POST)
+    else:
+        form = GradeForm(instance=student.grade_set.first())
+    return save_grade_form(request, form, 'schapp/teachers/includes/partial-grade-add.html', student)
+
+
+"""
+def add_grade(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    data = dict()
+    if request.method == 'POST':
+        form = GradeForm(request.POST or None)
+        if form.is_valid():
+            grade = form.save(commit=False)
+            grade.student = student
+            grade.save()
+            data['form_is_valid'] = True
+        else:
+            data['form_is_valid'] = False
+    else:
+        form = GradeForm()
+    context = {'form': form, 'student': student}
+    data['html_form'] = render_to_string('schapp/teachers/includes/partial-grade-add.html',
+                                         context, request=request)
+    return JsonResponse(data)
+"""
+
+
+def student_detail(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    subjects = Subject.objects.all()
+    return render(request, 'schapp/teachers/student-details.html', {'student': student, 'subjects': subjects})

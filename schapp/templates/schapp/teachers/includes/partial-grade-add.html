@@ -1,0 +1,14 @@
+<form class="js-grade-form" method="post" action="{% url 'schapp:add-grade' student.pk %}">
+    {% csrf_token %}
+    <div class="modal-header">
+        <h4 class="modal-title">Enter Student Scores:</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
+    </div>
+    <div class="modal-body">
+        {% include 'schapp/teachers/includes/partial-grade-form.html' %}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-info">Update</button>
+    </div>
+</form>

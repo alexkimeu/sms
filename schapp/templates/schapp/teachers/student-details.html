@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+{% load static %}
+<link href="{% static 'schapp/teacher/css/custom.css' %}" rel="stylesheet" type="text/css">
+
+
+<!--Javascript files -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="{% static 'schapp/teacher/js/teachers.js' %}"></script>
+
+
+<div class="container">
+    <div class="row">
+
+        <!--Teacher info-->
+        <div class="col-sm-2">
+            <div class="panel panel-danger">
+                <div class="panel-body">
+                    <img src="{% static 'schapp/teacher/images/t.jpg' %}" class="img img-circle img-responsive" alt="No image to display" style="width: 150px;height: 150px;">
+
+                    <div class="caption">
+                        <h4>{{ student.name }}</h4>
+                        <h5>{{ student.admission }}</h5>
+                        <h6>{{ student.form }}</h6>
+                        <a href="" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Teacher section-->
+
+         <!--Student info-->
+        <div class="col-sm-10">
+            <ul class="nav nav-tabs" style="margin: 2px;">
+                <li class="active"><a href="{% url 'schapp:form1' %}">Form 1</a> </li>
+                <li><a href="">Form 2</a> </li>
+                <li><a href="">Form 3</a> </li>
+                <li><a href="">Form 4</a> </li>
+            </ul>
+
+
+            <div class="panel panel-danger">
+                <div class="panel-body">
+                    <a href="" class="btn btn-success btn-sm">Term 1</a>
+                    <a href="" class="btn btn-info btn-sm">Term 2</a>
+                    <a href="" class="btn btn-primary btn-sm">Term 3</a>
+                    <a href="" class="btn btn-danger" style="float: right; margin: 2px;"><i class="fas fa-print fa"></i></a>
+                    <button class="btn btn-info js-add-grade" data-url="{% url 'schapp:add-grade' student.pk %}" style="float: right;margin: 2px;">
+                        <i class="fas fa-plus-circle"></i>
+                    </button>
+
+
+                <div class="table-responsive">
+                    <table class="table table-condensed"  id="student-table" style="margin: 2px;">
+                        <thead>
+                        <tr>
+                        <th>Subject</th>
+                        <th>CAT/30</th>
+                        <th>Exam/70</th>
+                        <th>Total</th>
+                        <th>Grade</th>
+                        <th>Remarks</th>
+                        <th>Teacher</th>
+                        <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for s in student.grade_set.all %}
+                        <tr>
+                            <td>{{ s.subject }}</td>
+                            <td>{% if s.cat %}{{ s.cat }}{% else %}-{% endif %}</td>
+                            <td>{{ s.exam }}</td>
+                            <td>{{ s.exam }}</td>
+                            <td>{{ Grade }}</td>
+                            <td>{{ s.remark }}</td>
+                            <td>{{ s.subject.teacher }}</td>
+                            <td>
+                                <a href="" class="btn btn-info btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+
+                         </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
