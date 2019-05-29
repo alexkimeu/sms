@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6deba8a3-2f09-4c24-998a-a33f4e7b0f86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/schapp/templates/schapp/students/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schapp/templates/schapp/teachers/includes/partial-grade-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schapp/templates/schapp/teachers/includes/partial-grade-form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schapp/templates/schapp/teachers/student-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/static/schapp/teacher/js/teachers.js" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/static/schapp/teacher/js/teachers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/templates/schapp/teachers/includes/partial-student-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/templates/schapp/teachers/includes/partial-student-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/templates/schapp/teachers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/templates/schapp/teachers/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/views/students.py" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/views/students.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schapp/views/teachers.py" beforeDir="false" afterPath="$PROJECT_DIR$/schapp/views/teachers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/school/urls.py" afterDir="false" />
-    </list>
+    <list default="true" id="6deba8a3-2f09-4c24-998a-a33f4e7b0f86" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,17 +288,17 @@
       <workItem from="1558458218583" duration="600000" />
       <workItem from="1558638396132" duration="26000" />
       <workItem from="1559027420621" duration="636000" />
+      <workItem from="1559039231492" duration="1298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70420000" />
+    <option name="totallyTimeSpent" value="71718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20681818" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20984848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -329,7 +311,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32833582" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32833582" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
